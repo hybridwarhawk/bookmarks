@@ -1,0 +1,23 @@
+require 'spec_helper'
+
+describe "Bookmarks" do
+  describe "GET /bookmarks" do
+    it "works! (now write some real specs)" do
+      get bookmarks_path
+      response.status.should be(200)
+    end
+  end
+  describe "Contact page" do
+    it "should have the content 'Contact'" do
+      visit '/bookmarks/contact'
+      expect(page).to have_content('Contact')
+    end
+
+    it "should have the title 'Contact'" do
+      visit '/bookmarks/contact'
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App | Contact")
+    end
+  end
+end
+
+

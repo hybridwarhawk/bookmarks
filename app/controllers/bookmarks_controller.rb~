@@ -3,11 +3,6 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks
   # GET /bookmarks.json
-
-  def signup
-
-  end
-  
   def index
     @bookmarks = Bookmark.all
   end
