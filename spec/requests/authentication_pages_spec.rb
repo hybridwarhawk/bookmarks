@@ -9,7 +9,7 @@ describe "Authentication" do
 
     it { should have_content('Sign in') }
     it { should have_title('Sign in') }
-  end
+  
 
   describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
@@ -21,7 +21,8 @@ describe "Authentication" do
       it { should have_link('Sign out',    href: signout_path) }
       it { should_not have_link('Sign in', href: signin_path) }
    end
-end
+  end
+
 
   describe "authorization" do
 
@@ -37,7 +38,7 @@ end
           specify { expect(response).to redirect_to(signin_path) }
         end
       end
-    end
+    
 
     describe "as wrong user" do
       let(:user) { FactoryGirl.create(:user) }
@@ -55,7 +56,7 @@ end
         specify { expect(response).to redirect_to(root_url) }
       end
      end
-  end
+  
 
   describe "signin" do
 
@@ -88,7 +89,6 @@ end
       it { should have_link('Sign out',    href: signout_path) }
       it { should_not have_link('Sign in', href: signin_path) }
     end
-
   end
+ end
 
-end
