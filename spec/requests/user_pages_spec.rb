@@ -34,8 +34,6 @@ describe "User pages" do
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
-  end
-end
 
     describe "with invalid information" do
       before { click_button "Save changes" }
@@ -43,7 +41,7 @@ end
       it { should have_content('error') }
     end
   end
-end
+
 
 
   describe "profile page" do
